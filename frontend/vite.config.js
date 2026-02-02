@@ -4,6 +4,7 @@ import path from 'path'
 
 export default defineConfig({
   plugins: [vue()],
+  base: './', // 使用相对路径，解决Vercel子路径部署问题
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src')
