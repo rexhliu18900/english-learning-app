@@ -10,10 +10,10 @@
             <br>帮助孩子高效掌握英语知识
           </p>
           <div class="hero-actions">
-            <el-button type="primary" size="large" @click="$router.push('/register')">
+            <el-button type="primary" size="large" @click="goToRegister">
               立即开始学习
             </el-button>
-            <el-button size="large" @click="$router.push('/login')">
+            <el-button size="large" @click="goToLogin">
               已有账号，去登录
             </el-button>
           </div>
@@ -107,6 +107,17 @@
 
 <script setup>
 import Layout from '@/components/Layout.vue'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+
+const goToRegister = () => {
+  router.push('/register')
+}
+
+const goToLogin = () => {
+  router.push('/login')
+}
 </script>
 
 <style scoped lang="scss">

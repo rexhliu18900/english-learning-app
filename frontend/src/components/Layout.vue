@@ -63,8 +63,8 @@
             </el-dropdown>
           </template>
           <template v-else>
-            <el-button type="primary" @click="$router.push('/login')">登录</el-button>
-            <el-button @click="$router.push('/register')">注册</el-button>
+            <el-button type="primary" @click="goToLogin">登录</el-button>
+            <el-button @click="goToRegister">注册</el-button>
           </template>
         </div>
       </div>
@@ -93,6 +93,14 @@ import { ElMessageBox } from 'element-plus'
 
 const userStore = useUserStore()
 const router = useRouter()
+
+function goToLogin() {
+  router.push('/login')
+}
+
+function goToRegister() {
+  router.push('/register')
+}
 
 function handleCommand(command) {
   switch (command) {
